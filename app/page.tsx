@@ -1,12 +1,18 @@
-import { Button } from './components/ui/button';
-import { UserButton } from '@clerk/nextjs';
+'use client';
 
-export default function Home() {
+import { Modal } from '@/app/components/ui/modal';
+
+export default function HomePage() {
   return (
     <div>
       <h1>Dashboard</h1>
-      <Button variant='secondary'>Click me!</Button>
-      <UserButton afterSignOutUrl='/' />
+      <Modal
+        title='New title'
+        description='New description'
+        isOpen
+        onClose={() => {}}>
+        Children
+      </Modal>
     </div>
   );
 }

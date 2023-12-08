@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '@/app/globals.css';
+import { cn } from './lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body className={`${inter.className} flex min-h-screen`}>
+        <body className={cn('antialiased flex min-h-screen', inter.className)}>
           {children}
         </body>
       </html>
